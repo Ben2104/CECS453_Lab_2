@@ -8,6 +8,7 @@ void main() {
 
     expect(find.text('The Starry Night'), findsOneWidget);
     expect(find.text('Vincent van Gogh (1889)'), findsOneWidget);
+    expect(_displayedAsset(tester), 'assets/images/starry_night.jpg');
     expect(find.widgetWithText(FilledButton, 'Previous'), findsOneWidget);
     expect(find.widgetWithText(FilledButton, 'Next'), findsOneWidget);
   });
@@ -29,6 +30,7 @@ void main() {
 
     expect(find.text('The Great Wave off Kanagawa'), findsOneWidget);
     expect(find.text('Katsushika Hokusai (1831)'), findsOneWidget);
+    expect(_displayedAsset(tester), 'assets/images/great_wave.jpg');
     final previousAfterNext = tester.widget<FilledButton>(
       find.widgetWithText(FilledButton, 'Previous'),
     );
@@ -40,6 +42,7 @@ void main() {
     await tester.pumpAndSettle();
 
     expect(find.text('The Starry Night'), findsOneWidget);
+    expect(_displayedAsset(tester), 'assets/images/starry_night.jpg');
   });
 
   testWidgets('disables Next on the final artwork', (tester) async {
@@ -55,9 +58,15 @@ void main() {
 
     expect(find.text('Water Lilies'), findsOneWidget);
     expect(find.text('Claude Monet (1906)'), findsOneWidget);
+    expect(_displayedAsset(tester), 'assets/images/water_lilies.jpg');
     final nextAtEnd = tester.widget<FilledButton>(
       find.widgetWithText(FilledButton, 'Next'),
     );
     expect(nextAtEnd.onPressed, isNull);
   });
+}
+
+String _displayedAsset(WidgetTester tester) {
+  final image = tester.widget<Image>(find.byType(Image));
+  return (image.image as AssetImage).assetName;
 }

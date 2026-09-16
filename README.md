@@ -32,15 +32,15 @@ flutter build apk --debug
 The bundled reproductions are public-domain works downloaded from Wikimedia
 Commons:
 
-- *The Starry Night* — Vincent van Gogh, 1889
-- *The Great Wave off Kanagawa* — Katsushika Hokusai, circa 1831
-- *Water Lilies* — Claude Monet, 1906
+- [*The Starry Night*](https://commons.wikimedia.org/wiki/File:Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg) — Vincent van Gogh, 1889 (public domain)
+- [*The Great Wave off Kanagawa*](https://commons.wikimedia.org/wiki/File:Great_Wave_off_Kanagawa2.jpg) — Katsushika Hokusai, circa 1831 (public domain)
+- [*Water Lilies*](https://commons.wikimedia.org/wiki/File:Claude_Monet_-_Water_Lilies_-_1906,_Ryerson.jpg) — Claude Monet, 1906 (public domain)
 
 ## Submission checklist
 
 - Record a project demonstration video shorter than two minutes.
-- Export the Dart source code to PDF.
-- Create a ZIP archive of the complete project.
+- Export `lib/main.dart` to PDF.
+- Create a clean ZIP from tracked files: `git archive -o CECS453_Lab_2.zip HEAD`.
 - Push the project to a GitHub repository named `CECS453_Lab_2` and paste its
   link into Canvas.
 - Add the agreed completion comment for each team member.
