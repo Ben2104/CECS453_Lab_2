@@ -25,7 +25,6 @@ flutter build apk --debug
 - `lib/art_space_page.dart` contains the artwork wall, descriptor, and controls.
 - `lib/artwork.dart` defines the artwork model and local collection.
 - `assets/images/` contains the bundled artwork images.
-- `test/` contains model and interaction tests.
 
 ## Artwork credits
 
